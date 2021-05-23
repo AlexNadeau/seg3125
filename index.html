@@ -1,0 +1,59 @@
+<html>
+<link rel="stylesheet" href = "styles.css">
+<head>
+  <title>Questionaire</title>
+</head>
+<body>
+    <br>
+    <div class="titles">
+      <br>
+      <h1>Questionaire</h1>
+      <p>The UI to be evaluated can be found<a href="https://web.coop.uottawa.ca/IndEX/Home/Index"> here</a></p>
+    </div><br>
+    <a href="https://web.coop.uottawa.ca/IndEX/Home/Index"><img src="images/site.png" padding="5px" width="800px" height="300px"></a><br>
+    <form name="form">
+      <div class="field">
+      <label class="titles" for="gender">Are you:</label><br>
+        <input type="radio" name="gender" value="male">Male<br>
+        <input type="radio" name="gender" value="female">Female<br>
+        <input type="radio" name="gender" value="other">Other<br><br>
+      </div><br>
+      <div class="field">
+        <label class="titles" for="age">Please enter your age:</label><br><br>
+        <input type="text" id="age" name="age"><br>
+      </div><br>
+      <div class="field">
+        <label class="titles" for="rating">On a scale from 1-10, please rate the interface of the website:</label><br>
+          <br><select name="rating" id="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+      </div><br>
+      <div class="field">
+        <label class="titles" for="respects">Select all that applies based on the website:</label><br><br>
+          <input type="checkbox" id="functionality" name="functionality" value="functionality"><label for="functionality">The website has proper functionality</label><br>
+          <input type="checkbox" id="consistency" name="consistency" value="consistency"><label for="consistency">The website is consistent</label><br>
+          <input type="checkbox" id="effiency" name="effiency" value="effiency"><label for="effiency">The website is efficient</label><br>
+          <input type="checkbox" id="usability" name="usability" value="usability"><label for="usability">The website is usable</label><br>
+          <input type="checkbox" id="reliability" name="reliability" value="reliability"><label for="reliability">The website is reliable</label><br>
+          <input type="checkbox" id="data" name="data" value="data"><label for="data">The website is safe and secure</label><br>
+      </div><br>
+      <div class="field">
+        <label class="titles" for="comments">Comments :</label><br><br>
+        <textarea id="comments" name="comments" rows="5" cols="100"></textarea><br>
+        <br><input type="submit">
+      </div><br>
+    </form>
+</body>
+<footer>
+  <p>Questionaire created by Alex Nadeau</p>
+</footer>
+</html>
