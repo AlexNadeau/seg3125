@@ -84,7 +84,7 @@ function addItemstoCart(){
             total = total + items[j].price;
           }
         }
-        str += '<li>' + elements[i].name + '</li>';
+        str += '<li>' + elements[i].name.split(":", 1)[0] + '</li>';
       }
     }
     console.log("total is:" + total);
