@@ -4,7 +4,7 @@ document.getElementById("cartbtn").addEventListener("click",cartPressed);
 document.getElementById("addItemsToList").addEventListener("click", addItemstoCart);
 
 //category 1: lactose intolorant, category2 is nut allergy, category3 is both
-var items= [{name: "Nuts", price: 1.99, category: 1},{name: "oranges", price: 2, category:3}, {name: "Brocoli", price: 2.99, category: 3},{name: "Yogurt", price: 3, category: 2}, {name: "Salmon", price: 9.99, category: 3}]
+var items= [{name: "Trail mix", price: 1.5, category: 1},{name: "Nuts", price: 1.99, category: 1},{name: "Oranges", price: 2, category:3},{name: "Chocolate milk", price: 2.5, category: 2}, {name: "Brocoli", price: 2.99, category: 3},{name: "Yogurt", price: 3, category: 2},{name: "Energy bar", price: 3.5, category: 1},{name: "Cheese curds", price: 3.5, category: 2}, {name: "Salmon", price: 9.99, category: 3}, {name: "Steak", price: 15, category:3}]
 var total = 0;
 console.log(items);
 function addItemstoCart(){
