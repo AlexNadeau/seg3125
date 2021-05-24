@@ -167,7 +167,7 @@ document.getElementById("restrictions").onchange = function(){
   var btn = document.getElementById("addItemsToList");
   var str = "";
   for(var i = 0; i < correspondingItems.length; i++){
-    var a = correspondingItems[i];
+    var a = correspondingItems[i].name + ": " + correspondingItems[i].price + "$";
     str += '<input type="checkbox" class="addedItems" name ="';
     str +=  a  + '"><label>' + a + '</label><br>';
   }
@@ -182,15 +182,6 @@ function cartPressed(){
 function productsPressed(){
   document.getElementById("Client").style.display = "none";
   document.getElementById("Cart").style.display = "none";
-  var btn = document.getElementById("addItemsToList");
-  var str = "";
-  for(var i = 0; i < correspondingItems.length; i++){
-    var a = correspondingItems[i].name + ": " + correspondingItems[i].price + "$";
-    str += '<input type="checkbox" class="addedItems" name ="';
-    str +=  a  + '"><label>' + a + '</label><br>';
-  }
-  document.getElementById("correctItems").innerHTML = str;
-  document.getElementById("Products").appendChild(btn);
   document.getElementById("Products").style.display = "block";
 }
 function clientPressed(){
