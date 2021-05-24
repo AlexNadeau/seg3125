@@ -29,6 +29,7 @@ function addItemstoCart(){
     str += '</ul>';
     document.getElementById("cartItems").innerHTML = str;
     document.getElementById("total").innerHTML = "Your total is: " + total;
+    cartPressed();
   }
 }
 document.getElementById("restrictions").onchange = function(){
