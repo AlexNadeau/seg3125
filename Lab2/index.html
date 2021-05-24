@@ -13,13 +13,12 @@
     <div id ="Client" class="Client">
       <p class= "bold" style="font-weight: bold">Client Information</p>
       <p>Tell us about yourself</p>
-      <label for="restrictions">Choose a category</label>
-      <select name="restrictions" id="restrictions">
-        <option value="0"></option>
-        <option value="1">Lactose intolerant</option>
-        <option value="2">Nut allergy</option>
-        <option value="3">None</option>
-      </select>
+      <label for="restrictions">Choose a category:</label>
+      <div id="restrictions">
+      <input type="checkbox" name="Lactose intolorant" class="restrictions"><label>I am lactose intolorant</label><br>
+      <input type="checkbox" name="Nut allergy" class="restrictions"><label>I have a nut allergy</label><br>
+      <input type="checkbox" name="Organic" class="restrictions"><label>I want only organic food</label><br>
+    </div>
     </div>
     <div id ="Cart" class="Cart">
       <p class= "bold">Cart</p>
@@ -34,7 +33,7 @@
       <p>We preselected products based on your restrictions</p>
       <P>Choose items to buy:</p>
       <div id="correctItems">
-      </div>
+      </div><br>
       <button id="addItemsToList">Add selected items to cart.</button>
     </div>
     <script src = "script.js"></script>

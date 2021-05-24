@@ -3,8 +3,70 @@ document.getElementById("clientbtn").addEventListener("click",clientPressed);
 document.getElementById("cartbtn").addEventListener("click",cartPressed);
 document.getElementById("addItemsToList").addEventListener("click", addItemstoCart);
 
-//category 1: lactose intolorant, category2 is nut allergy, category3 is both
-var items= [{name: "Trail mix", price: 1.5, category: 1},{name: "Nuts", price: 1.99, category: 1},{name: "Oranges", price: 2, category:3},{name: "Chocolate milk", price: 2.5, category: 2}, {name: "Brocoli", price: 2.99, category: 3},{name: "Yogurt", price: 3, category: 2},{name: "Energy bar", price: 3.5, category: 1},{name: "Cheese curds", price: 3.5, category: 2}, {name: "Salmon", price: 9.99, category: 3}, {name: "Steak", price: 15, category:3}]
+var items= [
+  {name: "Non Organic Trail mix",
+   price: 1.5,
+  containsLactose: false,
+  containsNuts: true,
+  isOrganic: false},
+
+  {name: "Organic Oranges",
+  price: 2,
+  containsLactose: false,
+  containsNuts: false,
+  isOrganic: true},
+
+  {name: "Non Organic Chocolate milk",
+  price: 2.5,
+  containsLactose: true,
+  containsNuts: false,
+  isOrganic: false},
+
+  {name:"Organic mini Pizza",
+  price:3.5,
+  containsLactose: true,
+  containsNuts:false,
+  isOrganic:true},
+
+  {name: "Non Organic Chips",
+  price: 3.75,
+  containsLactose: false,
+  containsNuts: false,
+  isOrganic: false},
+
+  {name: "Organic Tomato Sauce",
+  price: 4,
+  containsLactose: false,
+  containsNuts: false,
+  isOrganic: true},
+
+  {name: "Organic Cheese and Nut pie",
+  price: 5,
+  containsLactose: true,
+  containsNuts: true,
+  isOrganic: true},
+
+  {name: "Non Organic Peanut butter",
+  price: 5,
+  containsLactose: false,
+  containsNuts: true,
+  isOrganic: false},
+
+  {name: "Non Organic Cake",
+  price: 7,
+  containsLactose: true,
+  containsNuts: false,
+  isOrganic: false},
+
+  {name: "Organic Steak",
+  price: 15,
+  containsLactose: false,
+  containsNuts: false,
+  isOrganic: true}
+];
+
+
+var correspondingItems = items;
 var total = 0;
 console.log(items);
 function addItemstoCart(){
@@ -28,22 +90,80 @@ function addItemstoCart(){
     console.log("total is:" + total);
     str += '</ul>';
     document.getElementById("cartItems").innerHTML = str;
-    document.getElementById("total").innerHTML = "Your total is: " + total;
+    document.getElementById("total").innerHTML = "Your total is: " + total + "$";
     cartPressed();
   }
 }
 document.getElementById("restrictions").onchange = function(){
-  var e = document.getElementById("restrictions").value;
-  const correspondingItems = [];
-  for(var i = 0; i < items.length; i++){
-    var temp = items[i].category;
-    if (e == 3){
-      correspondingItems.push(items[i].name + ": " + items[i].price + "$");
-    }
-    else if(temp == e || temp == 3){
-      correspondingItems.push(items[i].name + ": " + items[i].price + "$");
+  var e = document.getElementsByClassName("restrictions");
+  console.log(e);
+  correspondingItems = [];
+  const tempRestrictions = [];
+  for (var i = 0; i <e.length; i++) {
+    if (e[i].checked) {
+      var name = e[i].name;
+      console.log(name);
+      tempRestrictions.push(name);
     }
   }
+  console.log(tempRestrictions);
+  if (tempRestrictions.length == 3){
+    for (var i = 0; i < items.length; i++) {
+      if (!items[i].containsLactose && !items[i].containsNuts && items[i].isOrganic){
+        correspondingItems.push(items[i]);
+      }
+    }
+  }
+  else if (tempRestrictions.length == 2){
+    if (tempRestrictions.includes("Lactose intolorant") && tempRestrictions.includes("Nut allergy")){
+      for(var i =0; i < items.length; i++){
+        if (!items[i].containsLactose && !items[i].containsNuts){
+          correspondingItems.push(items[i]);
+        }
+      }
+    }
+    else if (tempRestrictions.includes("Lactose intolorant") && tempRestrictions.includes("Organic")){
+      for(var i =0; i < items.length; i++){
+        if (!items[i].containsLactose && items[i].isOrganic){
+          correspondingItems.push(items[i]);
+        }
+      }
+    }
+    else{
+      for(var i =0; i < items.length; i++){
+        if (!items[i].containsNuts && items[i].isOrganic){
+          correspondingItems.push(items[i]);
+        }
+      }
+    }
+  }
+  else if (tempRestrictions.length == 1){
+    if (tempRestrictions.includes("Lactose intolorant")){
+      for(var i =0; i < items.length; i++){
+        if (!items[i].containsLactose){
+          correspondingItems.push(items[i]);
+        }
+      }
+    }
+    else if (tempRestrictions.includes("Nut allergy")){
+      for(var i =0; i < items.length; i++){
+        if (!items[i].containsNuts){
+          correspondingItems.push(items[i]);
+        }
+      }
+    }
+    else{
+      for(var i =0; i < items.length; i++){
+        if (items[i].isOrganic){
+          correspondingItems.push(items[i]);
+        }
+      }
+    }
+  }
+  else{
+    correspondingItems = items;
+  }
+
   var btn = document.getElementById("addItemsToList");
   var str = "";
   for(var i = 0; i < correspondingItems.length; i++){
@@ -62,6 +182,15 @@ function cartPressed(){
 function productsPressed(){
   document.getElementById("Client").style.display = "none";
   document.getElementById("Cart").style.display = "none";
+  var btn = document.getElementById("addItemsToList");
+  var str = "";
+  for(var i = 0; i < correspondingItems.length; i++){
+    var a = correspondingItems[i].name + ": " + correspondingItems[i].price + "$";
+    str += '<input type="checkbox" class="addedItems" name ="';
+    str +=  a  + '"><label>' + a + '</label><br>';
+  }
+  document.getElementById("correctItems").innerHTML = str;
+  document.getElementById("Products").appendChild(btn);
   document.getElementById("Products").style.display = "block";
 }
 function clientPressed(){
