@@ -11,23 +11,24 @@ function addItemstoCart(){
   if (!(document.getElementById("correctItems").innerHTML === "")){
     total = 0;
     var elements = document.getElementsByClassName("addedItems");
-    console.log(elements);
+    //console.log(elements);
     var str = '<ul>';
     for (var i = 0; i < elements.length; i++) {
       if (elements[i].checked){
         var test = elements[i];
-        console.log(test.name);
         for (var j = 0; j < items.length; j++) {
-          if (elements[i].name === items[j].name){
+          console.log(elements[i].name.split(":",1)[0]);
+          if (elements[i].name.split(":", 1)[0] === items[j].name){
             total = total + items[j].price;
           }
         }
         str += '<li>' + elements[i].name + '</li>';
       }
     }
+    console.log("total is:" + total);
     str += '</ul>';
     document.getElementById("cartItems").innerHTML = str;
-    document.getElementById("total").innerHTML = total;
+    document.getElementById("total").innerHTML = "Your total is: " + total;
   }
 }
 document.getElementById("restrictions").onchange = function(){
@@ -36,16 +37,18 @@ document.getElementById("restrictions").onchange = function(){
   for(var i = 0; i < items.length; i++){
     var temp = items[i].category;
     if (e == 3){
-      correspondingItems.push(items[i].name);
+      correspondingItems.push(items[i].name + ": " + items[i].price + "$");
     }
     else if(temp == e || temp == 3){
-      correspondingItems.push(items[i].name);
+      correspondingItems.push(items[i].name + ": " + items[i].price + "$");
     }
   }
   var btn = document.getElementById("addItemsToList");
   var str = "";
   for(var i = 0; i < correspondingItems.length; i++){
-    str += '<input type="checkbox" class="addedItems" name =' + correspondingItems[i] + '><label>' + correspondingItems[i] + '</label><br>';
+    var a = correspondingItems[i];
+    str += '<input type="checkbox" class="addedItems" name ="';
+    str +=  a  + '"><label>' + a + '</label><br>';
   }
   document.getElementById("correctItems").innerHTML = str;
   document.getElementById("Products").appendChild(btn);
