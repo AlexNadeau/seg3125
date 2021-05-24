@@ -1,0 +1,41 @@
+<html>
+<link rel="stylesheet" href = "styles.css">
+<head>
+  <title>Lab2</title>
+  <body>
+    <h2 class="nameOfStore">Tabs</h2>
+    <div class="tab">
+    <button id="clientbtn">Client</button>
+    <button id="productsbtn">Products</button>
+    <button id="cartbtn">Cart</button>
+  </div>
+    <div id ="Client" class="Client">
+      <p class= "bold" style="font-weight: bold">Client Information</p>
+      <p>Tell us about yourself</p>
+      <label for="restrictions">Choose a category</label>
+      <select name="restrictions" id="restrictions">
+          <option value="0"></option>
+          <option value="1">Lactose intolerant</option>
+          <option value="2">Nut allergy</option>
+          <option value="3">None</option>
+        </select>
+    </div>
+    <div id ="Cart" class="Cart">
+      <p class= "bold">Cart</p>
+      <p>Here is your cart.</p>
+      <p>You selected :</p>
+      <div id="cartItems">
+        </div>
+      <p id="total">Total price is 0</p>
+      </div>
+    <div id ="Products" class="Products">
+      <p class= "bold" >Your targeted products</p>
+      <p>We preselected products based on your restrictions</p>
+      <P>Choose items to buy:</p>
+        <div id="correctItems"
+        </div>
+      <button id="addItemsToList">Add selected items to cart.</button>
+      </div>
+  </body>
+  <script src = "script.js"></script>
+</html>
