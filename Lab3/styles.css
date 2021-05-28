@@ -29,7 +29,7 @@
 }
 .Client{
   padding: 10px;
-  display: none;
+  display: block;
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: white;
@@ -49,7 +49,8 @@
   background-color: white;
 }
 footer{
-  position: fixed;
+  position: relative;
+  margin: 10px;
   height: 60px;
   bottom: 0;
 }

@@ -8,61 +8,71 @@ var items= [
    price: 1.5,
   containsLactose: false,
   containsNuts: true,
-  isOrganic: false},
+  isOrganic: false,
+  imgsrc: "trailmix.jpg"},
 
   {name: "Organic Oranges",
   price: 2,
   containsLactose: false,
   containsNuts: false,
-  isOrganic: true},
+  isOrganic: true,
+imgsrc: "orange.jpg"},
 
   {name: "Non Organic Chocolate milk",
   price: 2.5,
   containsLactose: true,
   containsNuts: false,
-  isOrganic: false},
+  isOrganic: false,
+imgsrc: "chocolatemilk.png"},
 
   {name:"Organic mini Pizza",
   price:3.5,
   containsLactose: true,
   containsNuts:false,
-  isOrganic:true},
+  isOrganic:true,
+imgsrc: "pizza.png"},
 
   {name: "Non Organic Chips",
   price: 3.75,
   containsLactose: false,
   containsNuts: false,
-  isOrganic: false},
+  isOrganic: false,
+imgsrc: "chips.jpg"},
 
   {name: "Organic Tomato Sauce",
   price: 4,
   containsLactose: false,
   containsNuts: false,
-  isOrganic: true},
+  isOrganic: true,
+imgsrc: "sauce.jpg"},
 
   {name: "Organic Cheese and Nut pie",
   price: 5,
   containsLactose: true,
   containsNuts: true,
-  isOrganic: true},
+  isOrganic: true,
+imgsrc: "pie.png"},
 
   {name: "Non Organic Peanut butter",
   price: 5,
   containsLactose: false,
   containsNuts: true,
-  isOrganic: false},
+  isOrganic: false,
+imgsrc: "peanutbutter.png"},
 
   {name: "Non Organic Cake",
   price: 7,
   containsLactose: true,
   containsNuts: false,
-  isOrganic: false},
+  isOrganic: false,
+imgsrc: "cake.png"},
 
   {name: "Organic Steak",
   price: 15,
   containsLactose: false,
   containsNuts: false,
-  isOrganic: true}
+  isOrganic: true,
+imgsrc: "steak.jpg"}
 ];
 
 
@@ -169,7 +179,7 @@ document.getElementById("restrictions").onchange = function(){
   for(var i = 0; i < correspondingItems.length; i++){
     var a = correspondingItems[i].name + ": " + correspondingItems[i].price + "$";
     str += '<input type="checkbox" class="addedItems" name ="';
-    str +=  a  + '"><label>' + a + '</label><br>';
+    str +=  a  + '"><label>' + a + '</label><img src="images/"' + correspondingItems[i].imgsrc + 'width="30px" height="30px"><br>';
   }
   document.getElementById("correctItems").innerHTML = str;
   document.getElementById("Products").appendChild(btn);
@@ -183,6 +193,15 @@ function productsPressed(){
   document.getElementById("Client").style.display = "none";
   document.getElementById("Cart").style.display = "none";
   document.getElementById("Products").style.display = "block";
+  var btn = document.getElementById("addItemsToList");
+  var str = "";
+  for(var i = 0; i < correspondingItems.length; i++){
+    var a = correspondingItems[i].name + ": " + correspondingItems[i].price + "$";
+    str += '<input type="checkbox" class="addedItems" name ="';
+    str +=  a  + '"><label>' + a + '</label><br><img src="images/' + correspondingItems[i].imgsrc + '" width="30px" height="30px"><br><br>';
+  }
+  document.getElementById("correctItems").innerHTML = str;
+  document.getElementById("Products").appendChild(btn);
 }
 function clientPressed(){
   document.getElementById("Cart").style.display = "none";
