@@ -1,42 +1,45 @@
 <html>
 <link rel="stylesheet" href = "styles.css">
 <head>
-  <title>Lab3</title>
+  <title>Lab3</title> <!-- Inspired by W3Schools. Link: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapse_sidebar -->
 </head>
   <body>
-    <h2 class="nameOfStore">Alex's Good Food</h2>
-    <div class="tab">
-      <button id="clientbtn">Client</button>
-      <button id="productsbtn">Products</button>
-      <button id="cartbtn">Cart</button>
+    <div id="sidebar" class="sidebar">
+      <a href="#" class="closebtn" id="closebtn">x</a>
+      <a href="#" id="productsbtn" style="font-size: 25px">Products</a>
+      <a href="#" id="cartbtn" style="font-size: 25px">Cart</a>
+      <p>Designed by Alex Nadeau</p>
     </div>
-    <div id ="Client" class="Client">
-      <p class= "bold" style="font-weight: bold">Client Information</p>
-      <p>Tell us about yourself</p>
-      <label for="restrictions">Choose a category:</label>
-      <div id="restrictions">
-      <input type="checkbox" name="Lactose intolorant" class="restrictions"><label>I am lactose intolorant</label><br>
-      <input type="checkbox" name="Nut allergy" class="restrictions"><label>I have a nut allergy</label><br>
-      <input type="checkbox" name="Organic" class="restrictions"><label>I want only organic food</label><br>
-    </div>
-    </div>
-    <div id ="Cart" class="Cart">
-      <p class= "bold">Cart</p>
-      <p>Here is your cart.</p>
-      <p>You selected :</p>
-      <div id="cartItems">
+    <a href="#" class="openbtn" id="openbtn">☰</a><br>
+    <div id="main" class="main">
+      <h2 class="nameOfStore">Alex's Good Food</h2>
+      <div id ="Client" class="Client">
+        <p class= "bold">Client Information</p>
+        <p>Tell us about yourself</p>
+        <label for="restrictions">Choose a category:</label>
+        <div id="restrictions">
+          <input type="checkbox" name="Lactose intolorant" class="restrictions"><label>I am lactose intolorant</label><br>
+          <input type="checkbox" name="Nut allergy" class="restrictions"><label>I have a nut allergy</label><br>
+          <input type="checkbox" name="Organic" class="restrictions"><label>I want only organic food</label><br>
+        </div>
       </div>
-      <p id="total">Total price is 0$</p>
-    </div>
-    <div id ="Products" class="Products">
-      <p class= "bold" >Your targeted products</p>
-      <p>We preselected products based on your restrictions</p>
-      <P>Choose items to buy:</p>
-      <div id="correctItems">
-      </div><br>
-      <button id="addItemsToList">Add selected items to cart.</button>
-    </div>
+      <div id ="Cart" class="Cart">
+        <p class= "bold">Cart</p>
+        <p>Here is your cart.</p>
+        <p>You selected :</p>
+        <div id="cartItems">
+        </div>
+        <p id="total">Total price is 0$</p>
+      </div>
+      <div id ="Products" class="Products">
+        <p class= "bold" >Your targeted products</p>
+        <p>We preselected products based on your restrictions</p>
+        <P>Choose items to buy:</p>
+          <div id="correctItems">
+          </div><br>
+          <button id="addItemsToList">Add selected items to cart.</button>
+        </div>
+      </div>
     <script src = "script.js"></script>
   </body>
-  <footer>Designed by Alex Nadeau</footer>
 </html>

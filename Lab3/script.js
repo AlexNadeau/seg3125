@@ -1,8 +1,14 @@
 document.getElementById("productsbtn").addEventListener("click",productsPressed);
-document.getElementById("clientbtn").addEventListener("click",clientPressed);
 document.getElementById("cartbtn").addEventListener("click",cartPressed);
 document.getElementById("addItemsToList").addEventListener("click", addItemstoCart);
-
+document.getElementById("openbtn").onclick = function(){
+  document.getElementById("sidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+document.getElementById("closebtn").onclick = function(){
+  document.getElementById("sidebar").style.width = "0px";
+  document.getElementById("main").style.marginLeft = "0px";
+}
 var items= [
   {name: "Non Organic Trail mix",
    price: 1.5,
@@ -179,18 +185,16 @@ document.getElementById("restrictions").onchange = function(){
   for(var i = 0; i < correspondingItems.length; i++){
     var a = correspondingItems[i].name + ": " + correspondingItems[i].price + "$";
     str += '<input type="checkbox" class="addedItems" name ="';
-    str +=  a  + '"><label>' + a + '</label><img src="images/"' + correspondingItems[i].imgsrc + 'width="30px" height="30px"><br>';
+    str +=  a  + '"><label>' + a + '</label><br><img src="images/' + correspondingItems[i].imgsrc + '" width="30px" height="30px"><br>';
   }
   document.getElementById("correctItems").innerHTML = str;
   document.getElementById("Products").appendChild(btn);
 }
 function cartPressed(){
   document.getElementById("Products").style.display = "none";
-  document.getElementById("Client").style.display = "none";
   document.getElementById("Cart").style.display = "block";
 }
 function productsPressed(){
-  document.getElementById("Client").style.display = "none";
   document.getElementById("Cart").style.display = "none";
   document.getElementById("Products").style.display = "block";
   var btn = document.getElementById("addItemsToList");
@@ -198,13 +202,8 @@ function productsPressed(){
   for(var i = 0; i < correspondingItems.length; i++){
     var a = correspondingItems[i].name + ": " + correspondingItems[i].price + "$";
     str += '<input type="checkbox" class="addedItems" name ="';
-    str +=  a  + '"><label>' + a + '</label><br><img src="images/' + correspondingItems[i].imgsrc + '" width="30px" height="30px"><br><br>';
+    str +=  a  + '"><label>' + a + '</label><br><img src="images/' + correspondingItems[i].imgsrc + '"width="30px" height="30px"><br><br>';
   }
   document.getElementById("correctItems").innerHTML = str;
   document.getElementById("Products").appendChild(btn);
-}
-function clientPressed(){
-  document.getElementById("Cart").style.display = "none";
-  document.getElementById("Products").style.display = "none";
-  document.getElementById("Client").style.display = "block";
 }
