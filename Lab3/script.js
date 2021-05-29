@@ -84,6 +84,15 @@ imgsrc: "steak.jpg"}
 
 var correspondingItems = items;
 var total = 0;
+var btn = document.getElementById("addItemsToList");
+var str = "";
+for(var i = 0; i < correspondingItems.length; i++){
+  var a = correspondingItems[i].name + ": " + correspondingItems[i].price + "$";
+  str += '<input type="checkbox" class="addedItems" name ="';
+  str +=  a  + '"><label>' + a + '</label><br><img src="images/' + correspondingItems[i].imgsrc + '" width="30px" height="30px"><br>';
+}
+document.getElementById("correctItems").innerHTML = str;
+document.getElementById("Products").appendChild(btn);
 console.log(items);
 function addItemstoCart(){
   if (!(document.getElementById("correctItems").innerHTML === "")){
@@ -193,17 +202,12 @@ document.getElementById("restrictions").onchange = function(){
 function cartPressed(){
   document.getElementById("Products").style.display = "none";
   document.getElementById("Cart").style.display = "block";
+  document.getElementById("sidebar").style.width = "0px";
+  document.getElementById("main").style.marginLeft = "0px";
 }
 function productsPressed(){
   document.getElementById("Cart").style.display = "none";
   document.getElementById("Products").style.display = "block";
-  var btn = document.getElementById("addItemsToList");
-  var str = "";
-  for(var i = 0; i < correspondingItems.length; i++){
-    var a = correspondingItems[i].name + ": " + correspondingItems[i].price + "$";
-    str += '<input type="checkbox" class="addedItems" name ="';
-    str +=  a  + '"><label>' + a + '</label><br><img src="images/' + correspondingItems[i].imgsrc + '"width="30px" height="30px"><br><br>';
-  }
-  document.getElementById("correctItems").innerHTML = str;
-  document.getElementById("Products").appendChild(btn);
+  document.getElementById("sidebar").style.width = "0px";
+  document.getElementById("main").style.marginLeft = "0px";
 }

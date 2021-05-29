@@ -29,7 +29,7 @@
 .sidebar p{
   color: #818181;
   position: absolute;
-  bottom: 50;
+  bottom: 60;
   text-align: center;
 }
 .sidebar a:hover{
@@ -83,4 +83,12 @@ body{
 h2{
   font-size: 30px;
   margin-top: 1px;
+}
+.addItemsToList{
+  font-size: 15px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+  border: none;
 }
