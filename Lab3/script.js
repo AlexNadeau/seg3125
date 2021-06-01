@@ -22,7 +22,7 @@ var items= [
   containsLactose: false,
   containsNuts: false,
   isOrganic: true,
-imgsrc: "orange.jpg"},
+imgsrc: "orange.png"},
 
   {name: "Non Organic Chocolate milk",
   price: 2.5,
@@ -50,7 +50,7 @@ imgsrc: "chips.jpg"},
   containsLactose: false,
   containsNuts: false,
   isOrganic: true,
-imgsrc: "sauce.jpg"},
+imgsrc: "sauce.png"},
 
   {name: "Organic Cheese and Nut pie",
   price: 5,
@@ -78,7 +78,7 @@ imgsrc: "cake.png"},
   containsLactose: false,
   containsNuts: false,
   isOrganic: true,
-imgsrc: "steak.jpg"}
+imgsrc: "steak.png"}
 ];
 
 
@@ -89,7 +89,7 @@ var str = "";
 for(var i = 0; i < correspondingItems.length; i++){
   var a = correspondingItems[i].name + ": " + correspondingItems[i].price + "$";
   str += '<input type="checkbox" class="addedItems" name ="';
-  str +=  a  + '"><label>' + a + '</label><br><img src="images/' + correspondingItems[i].imgsrc + '" width="30px" height="30px"><br>';
+  str +=  a  + '"><label>' + a + '</label><br><img src="images/' + correspondingItems[i].imgsrc + '" width="2000px" height="200px"><br>';
 }
 document.getElementById("correctItems").innerHTML = str;
 document.getElementById("Products").appendChild(btn);
