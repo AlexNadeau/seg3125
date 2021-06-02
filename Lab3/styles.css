@@ -25,6 +25,7 @@
   color: #818181;
   display: block;
   transition: 0.3s;
+  font-size: 25px;
 }
 .sidebar p{
   color: #818181;
@@ -75,6 +76,13 @@
   border: 1px solid #ccc;
   background-color: #2a4eff3d;
 
+}
+.Help{
+  padding: 10px;
+  display: none;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #2a4eff3d;
 }
 body{
   background-color: skyblue;

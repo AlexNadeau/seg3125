@@ -1,6 +1,8 @@
 document.getElementById("productsbtn").addEventListener("click",productsPressed);
 document.getElementById("cartbtn").addEventListener("click",cartPressed);
 document.getElementById("addItemsToList").addEventListener("click", addItemstoCart);
+document.getElementById("helpbtn").addEventListener("click", helpPressed);
+
 document.getElementById("openbtn").onclick = function(){
   document.getElementById("sidebar").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
@@ -201,13 +203,22 @@ document.getElementById("restrictions").onchange = function(){
 }
 function cartPressed(){
   document.getElementById("Products").style.display = "none";
+  document.getElementById("Help").style.display = "none";
   document.getElementById("Cart").style.display = "block";
   document.getElementById("sidebar").style.width = "0px";
   document.getElementById("main").style.marginLeft = "0px";
 }
 function productsPressed(){
   document.getElementById("Cart").style.display = "none";
+  document.getElementById("Help").style.display = "none";
   document.getElementById("Products").style.display = "block";
+  document.getElementById("sidebar").style.width = "0px";
+  document.getElementById("main").style.marginLeft = "0px";
+}
+function helpPressed(){
+  document.getElementById("Cart").style.display = "none";
+  document.getElementById("Help").style.display = "block";
+  document.getElementById("Products").style.display = "none";
   document.getElementById("sidebar").style.width = "0px";
   document.getElementById("main").style.marginLeft = "0px";
 }
