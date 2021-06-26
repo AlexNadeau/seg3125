@@ -1,0 +1,72 @@
+td{
+    font-size: 20px;
+}
+a{
+  font-size: 18px;
+
+}
+.navbar-expand-md {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+}
+.navbar-expand-md .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    width: 50%
+}
+.navbar-collapse{
+  align-items: center;
+}
+.ulcentered{
+  width: 86%;
+  margin: auto;
+}
+p{
+    font-size: 20px;
+}
+.btn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.background3{
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  left: 0;
+
+}
+body{
+  background-color: #d3d3d3;
+  background-image: url('https://wallpaperaccess.com/full/960591.jpg');
+  background-repeat: repeat-y;
+}
+.table>:not(caption)>*>* {
+    background-color: #f8f9fa;
+}
+label {
+    display: inline-block;
+    font-size: 18px;
+}
+.card-img-top{
+  padding-top: 10px;
+  height: 200px;
+}
+.accordion-button{
+  font-size: 23px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+iframe {
+    border: 0;
+    width: 100%;
+    padding: 15px;
+}
+.accordion-header :hover{
+  color: #0c63e4;
+  background-color: #F9F9F9;
+}
