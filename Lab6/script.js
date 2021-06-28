@@ -1,6 +1,5 @@
 var unavailableDates = ["06/29/2020","07/07/2020","07/10/2020"];
 const setDateFormat = "mm/dd/yy";
-var c = false
 function disableDates(date) {
     var t1 = document.getElementById('flexRadioDefault6');
     var t2 = document.getElementById('flexRadioDefault7');
@@ -10,17 +9,14 @@ function disableDates(date) {
     }
     if (t1.checked){
       if (date.getDay() === 0 || date.getDay() === 6 || date.getDay() === 3 || date.getDay() === 4)
-        c = true;
         return [false];
     }
     if (t2.checked){
       if (date.getDay() === 0 || date.getDay() === 6 || date.getDay() === 1 || date.getDay() === 5)
-        c = true;
         return [false];
     }
     if (t3.checked){
       if (date.getDay() === 0 || date.getDay() === 6 || date.getDay() === 2 || date.getDay() === 4)
-        c = true
         return [false];
     }
     if (date.getDay() === 0 || date.getDay() === 6)
